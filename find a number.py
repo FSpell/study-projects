@@ -1,6 +1,7 @@
 from random import *
 a = randrange(1, 101)
-print('Welcome to fine a number game')
+count = 0
+print('Добро пожаловать в числовую угадайку')
 def is_valid(guess):
     valid_range=[i for i in range(1,101)]
     if guess in valid_range:
@@ -13,6 +14,7 @@ while True:
         print('А может быть все-таки введем целое число от 1 до 100?')
         continue
     number = int(number)
+    count += 1
     if number < a:
         print('Ваше число меньше загаданного, попробуйте еще разок')
         continue
@@ -21,8 +23,6 @@ while True:
         continue
     elif number == a:
         print('Вы угадали, поздравляем!')
+        print('Вы справились за', count, 'попыток')
         print('Спасибо, что играли в числовую угадайку. Еще увидимся...')
         break
-
-
-    
