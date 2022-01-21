@@ -34,7 +34,6 @@ def safe_password_creator():
     uppercase_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     punctuation = '#$%&*+-=?@^_'
     chars = ''
-    mistake_count = 0
     while True:
         count = ask_question('Количество паролей для генерации? (от 1 до 10)')
         valid_range = [str(i) for i in range(1, 11)]
@@ -42,7 +41,6 @@ def safe_password_creator():
             count = int(count)
             break
         else:
-            mistake_count += 1
             continue
     while True:
         lenght = ask_question('Длина одного пароля? от 3 до 20 символов')
@@ -51,7 +49,6 @@ def safe_password_creator():
             lenght = int(lenght)
             break
         else:
-            mistake_count += 1
             continue
     while True:
         need_digits = ask_question('Включать ли цифры 0123456789? да / нет')
@@ -63,7 +60,6 @@ def safe_password_creator():
                 need_digits = False
             break
         else:
-            mistake_count += 1
             continue
 
     while True:
@@ -76,7 +72,6 @@ def safe_password_creator():
                 need_big_letters = False
             break
         else:
-            mistake_count += 1
             continue
 
     while True:
@@ -89,7 +84,6 @@ def safe_password_creator():
                 need_small_letters = False
             break
         else:
-            mistake_count += 1
             continue
 
     while True:
@@ -102,7 +96,6 @@ def safe_password_creator():
                 need_symbols = False
             break
         else:
-            mistake_count += 1
             continue
     while True:
         easy_read = ask_question('Исключать ли неоднозначные символы il1Lo0O? да / нет')
@@ -114,7 +107,6 @@ def safe_password_creator():
                 easy_read = False
             break
         else:
-            mistake_count += 1
             continue
     #count, lenght, need_digits, need_big_letters, need_small_letters, need_symbols,easy_read
     a = 0
