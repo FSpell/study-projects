@@ -1,0 +1,13 @@
+def pascal(n):
+    if n == 0:
+        return [1]
+    temp = [1, 1]
+    for j in range(n - 1):
+        s = [1]
+        for i in range(len(temp) - 1):
+            s.append(sum(temp[i:i + 2]))
+        s.append(1)
+        temp = s.copy()
+        s.clear()
+    return temp
+print(pascal(int(input())))
