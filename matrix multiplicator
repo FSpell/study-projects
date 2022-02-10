@@ -1,0 +1,14 @@
+n, m = [int(i) for i in input().split()]
+matrix1 = [[int(i) for i in input().split()] for _ in range(n)]
+input()
+m, k = [int(i) for i in input().split()]
+matrix2 = [[int(i) for i in input().split()] for _ in range(m)]
+matrix3 = [[0] * k for i in range(n)]
+for row in range(n):
+    for col in range(k):
+        summa = 0
+        for x in range(m):
+            summa = summa + matrix1[row][x] * matrix2[x][col]
+        matrix3[row][col] = summa
+for row in matrix3:
+    print(*row)
