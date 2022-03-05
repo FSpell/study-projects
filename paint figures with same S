@@ -1,0 +1,28 @@
+import turtle as t
+import math
+import random
+t.Screen().setup(550, 550)
+t.speed(0)
+t.hideturtle()
+def figure(n, length):
+  for i in range(n):
+    t.forward(length)
+    t.right(180-(180*(n-2))/n)
+
+def find_length(s, n):
+  angle=math.radians(180/n)
+  tang = math.tan(angle)
+  a = math.sqrt((s * 4 * tang) / n)
+  return a
+for j in range(240, -250, -100):
+  for i in range(-210, 250, 100):
+    type = random.randint(3, 6)
+    length = find_length(3500, type)
+    t.penup()
+    t.goto(i, j)
+    t.backward(length / 2)
+    t.pendown()
+    t.fillcolor(random.randint(1,255),random.randint(1,255),random.randint(1,255))
+    t.begin_fill()
+    figure(type, length)
+    t.end_fill()
