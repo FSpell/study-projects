@@ -1,0 +1,26 @@
+n = int(input())
+baza = {}
+
+for i in range(n):
+    name, *name_parents = input().split(':')
+    name = name.strip()
+    if len(name_parents) != 0:
+        name_parents = name_parents[0].split()
+    for j in name_parents:
+        baza.setdefault(j, []).append(name)
+def poisk(file):
+    if file in baza:
+        for i in baza[file]:
+            useless.append(i)
+            poisk(i)
+m = int(input())
+result=[]
+useless = []
+for i in range(m):
+    txt=input()
+    poisk(txt)
+   
+    if txt in useless:
+        result.append(txt)
+
+print(*result, sep='\n')
