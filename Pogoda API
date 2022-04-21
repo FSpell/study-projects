@@ -1,0 +1,11 @@
+import requests
+import json
+city = input("City? ")
+api_key = "25778858995fd72f1441594436c64dcc"
+api_url = "https://api.openweathermap.org/data/2.5/weather"
+params = {"q" : city, "appid" : "25778858995fd72f1441594436c64dcc", "units" : "metric", "lang" : "ru"}
+res = requests.get(api_url, params)
+result = res.json()
+print("Текущая темпереатура: ", result["main"]["temp"])
+print("Ощущается как:", result["main"]["feels_like"])
+print(result["weather"][0]["description"].capitalize())
